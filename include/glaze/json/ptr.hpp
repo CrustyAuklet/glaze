@@ -10,7 +10,7 @@
 namespace glz
 {
    template <class T, class B>
-   bool read_as_json(T&& root_value, const sv json_ptr, B&& buffer)
+   parse_error read_as_json(T&& root_value, const sv json_ptr, B&& buffer)
    {
       return read_as<opts{}>(std::forward<T>(root_value), json_ptr, buffer);
    }
