@@ -53,7 +53,7 @@ namespace glz
          }
          if (json_ptr[0] != '/' || json_ptr.size() < 2) return false;
 
-         static thread_local auto key = []() {
+         static auto key = []() {
             if constexpr (writable_map_t<std::decay_t<T>>) {
                return typename std::decay_t<T>::key_type{};
             }
